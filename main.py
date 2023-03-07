@@ -1,3 +1,2 @@
-zyl: int = 1
+zyl:str = 'sb'
 print(zyl)
-
