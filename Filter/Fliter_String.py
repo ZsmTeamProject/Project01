@@ -5,6 +5,7 @@ from sklearn.preprocessing import LabelEncoder
 # 读取数据
 data = pd.read_csv("../FilteredData/FilteredData.csv")
 
+
 # 创建LabelEncoder对象
 le = LabelEncoder()
 
@@ -15,13 +16,12 @@ data['seg_cabin'] = le.fit_transform(data['seg_cabin'])
 data['gender'] = le.fit_transform(data['gender'])
 data['residence_country'] = le.fit_transform(data['residence_country'])
 data['nation_name'] = le.fit_transform(data['nation_name'])
-
-# 打印转换后的数据
-print(data.head())
+data['age'] = le.fit_transform(data['age'])
 
 # 保存转换后的数据
-data.to_csv("encoded_data_file.csv", encoding='utf-8', index=False)
+data.to_csv("version_0.0.1.csv", index=False)
 
+print("hi!")
 
 
 
