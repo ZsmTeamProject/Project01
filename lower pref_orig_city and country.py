@@ -8,6 +8,3 @@ df.iloc[:, 362:373] = df.iloc[:, 362:373].astype(str)
 
 # 将指定列范围中的数据转换为小写
 df.iloc[:, 362:373] = df.iloc[:, 362:373].apply(lambda x: x.str.lower())
-
-# 打印指定列范围
-print(df.iloc[:, 362:372])
