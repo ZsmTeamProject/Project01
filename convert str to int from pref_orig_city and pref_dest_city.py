@@ -15,5 +15,5 @@ for col in df.columns:
     if col not in cols_to_keep and df[col].dtype == 'object':
         df[col] = le.fit_transform(df[col])
 
-# 显示结果
+# 更新csv
 df.to_csv('converted.csv', encoding='utf-8', index=False)
