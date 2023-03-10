@@ -9,8 +9,5 @@ df['seg_dep_time'] = df['seg_dep_time'].str.split(' ').str[1].str.split(':').str
 # 将hour列中的所有值转换为整数类型
 df['seg_dep_time'] = df['seg_dep_time'].astype(int)
 
-# 将hour列代替原来的seg_dep_time列
-df.rename(columns={'hour': 'seg_dep_time'}, inplace=True)
-
 # 保存更新后的CSV文件
 df.to_csv('data3.csv', index=False)

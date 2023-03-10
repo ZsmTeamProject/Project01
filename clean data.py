@@ -36,9 +36,6 @@ df['seg_dep_time'] = df['seg_dep_time'].str.split(' ').str[1].str.split(':').str
 # 将hour列中的所有值转换为整数类型
 df['seg_dep_time'] = df['seg_dep_time'].astype(int)
 
-# 将hour列代替原来的seg_dep_time列
-df.rename(columns={'hour': 'seg_dep_time'}, inplace=True)
-
 # 从birth_date列中提取年份并替换原来的内容
 df['birth_date'] = df['birth_date'].str.split('/').str[0]
 
