@@ -2,7 +2,7 @@ import pandas as pd
 
 # 读取 CSV 文件并选取需要处理的列范围
 df = pd.read_csv("C:\\Users\\19678\\Desktop\\data\\.ipynb_checkpoints\\train-checkpoint.csv", low_memory=False)
-cols = df.columns[363:372]
+cols = df.columns[362:372]
 
 # 定义将大写字母转换为小写字母的函数
 def convert_lower_case(x):
