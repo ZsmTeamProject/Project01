@@ -3,10 +3,15 @@ import pandas as pd
 from keras.models import Sequential
 from keras.layers import Dense
 import numpy as np
+import tensorflow as tf
+
+
+physical_devices = tf.config.experimental.list_physical_devices('GPU')
+tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
 
 # 读取数据集
-data = pd.read_csv("../Filter/version_0.0.1.csv")
+data = pd.read_csv("../FilteredData/version_0.0.1.csv")
 
 # 定义输入和输出
 X = data.drop(['emd_lable2'], axis=1).values
@@ -35,7 +40,9 @@ model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']
 
 # 训练模型
 # model.fit(X_train, y_train, epochs=50, batch_size=32)
-history = model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split=0.2)
+batch_size = 128
+# history = model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split=0.2)
+history = model.fit(X_train, y_train, epochs=200, batch_size=batch_size, validation_split=0.2)
 
 # 输出训练进度
 print(history.history)
@@ -44,8 +51,7 @@ print(history.history)
 test_loss, test_acc = model.evaluate(X_test, y_test)
 print('测试集上的准确率:', test_acc)
 
-# 保存模型
-model.save('my_model.h5')
+
 
 
 

@@ -3,7 +3,7 @@ from keras.models import Sequential
 from keras.layers import Dense
 
 # 读取数据集
-data = pd.read_csv("../Filter/version_0.0.1.csv")
+data = pd.read_csv("../FilteredData/encoded_data_final.csv")
 
 # 定义输入和输出
 X = data.drop(['emd_lable2'], axis=1).values

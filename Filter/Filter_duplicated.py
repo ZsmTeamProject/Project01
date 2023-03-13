@@ -1,7 +1,7 @@
 import pandas as pd
 
 # 读取数据
-data = pd.read_csv("version_0.0.1.csv")
+data = pd.read_csv("../FilteredData/version_0.0.1.csv")
 
 # 找到重复数据
 duplicated_data = data[data.duplicated()]

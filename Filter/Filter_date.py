@@ -2,7 +2,7 @@ import pandas as pd
 from datetime import datetime
 
 # 读取数据
-data = pd.read_csv("../Filter/encoded_data_file.csv")
+data = pd.read_csv("../FilteredData/encoded_data_file.csv")
 
 # 将 seg_dep_time 字段转换为日期时间格式，并提取小时数作为新特征 hour
 # ！！！这个hour不是需要的特征，只是临时使用的一个样板！！！！

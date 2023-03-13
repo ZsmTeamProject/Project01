@@ -16,5 +16,5 @@ for idx, row in df.iterrows():
 # 获取被选中的字段名
 # selected_columns = df['字段名'].tolist()
 selected_columns = df['字段名']
-selected_columns.to_csv("SelectedFeatures.csv",index=False)
+selected_columns.to_csv("SelectedFeatures.csv", index=False)
 
