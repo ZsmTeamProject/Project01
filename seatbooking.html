@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>航空公司用户信息</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<header class="header">航空公司用户信息</header>
+<body style="height: 100%;">
+    <!--用户信息-->
+	<div class="userinfo" id="username-form">
+		<label for="username">请输入您的用户名：</label>
+		<input type="text" id="username">
+		<button id="submit-button" onclick="submitUsername()">提交</button>
+	</div>
+
+    <!--购买会员-->
+    <div id="member-form" style="display: none;">
+        <h2 class="price_title">购买会员</h2>
+        <div class="price-tables">
+          <table class="basic-table">
+            <caption>基础会员价目表</caption>
+            <tr>
+              <th>时间</th>
+              <th>价格</th>
+            </tr>
+            <tr>
+              <td>六个月</td>
+              <td>1200￥</td>
+            </tr>
+            <tr>
+              <td>一年</td>
+              <td>2000￥</td>
+            </tr>
+            <tr>
+              <td>两年</td>
+              <td>3500￥</td>
+            </tr>
+          </table>
+      
+          <table class="premium-table">
+            <caption>高级会员价目表</caption>
+            <tr>
+              <th>时间</th>
+              <th>价格</th>
+            </tr>
+            <tr>
+              <td>六个月</td>
+              <td>2400￥</td>
+            </tr>
+            <tr>
+              <td>一年</td>
+              <td>4200￥</td>
+            </tr>
+            <tr>
+              <td>两年</td>
+              <td>7500￥</td>
+            </tr>
+          </table>
+        </div>
+      
+        <table class="membership-select">
+          <tr>
+            <td>请选择会员类型：</td>
+            <td>
+              <select id="membership-type">
+                <option value="basic">基础会员</option>
+                <option value="premium">高级会员</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>请选择时长：</td>
+            <td>
+              <select id="membership-duration">
+                <option value="6">六个月</option>
+                <option value="12">一年</option>
+                <option value="24">两年</option>
+              </select>
+            </td>
+          </tr>
+          <tr style="border: none;">
+            <td colspan="2" style="border: none;">
+                <div class="submin">
+                    <button id="member-submit-button" onclick="calculatePrice()">提交</button>
+                </div>
+            </td>
+          </tr>
+        </table>
+        <div id="price"></div>
+    </div>      
+
+    <!--付费选座-->
+    <div id="seat-form" style="display: none;">
+        <h2 class="seat-title">付费选座服务</h2>
+        <form class="seat-level">
+          <label for="seat-level">请选择舱位：</label>
+          <select id="seat-level">
+            <option value="J">公务舱“J”</option>
+            <option value="Y">经济舱“Y”</option>
+          </select>
+          <button id="seat-submit-button" type="button" onclick="showSeatMap()">确定</button>
+        </form>
+    </div>
+    <!--座位表-->     
+    <div id="seat-map" style="display: none;margin-bottom: 300px;">
+        <table class="seat-map">
+          <tbody></tbody>
+        </table>
+        <h3 id="selected-seat" style="text-align: center;"></h3>
+        <button style="margin: 50px auto;display: block;" id="seat-select-button" type="button" onclick="selectSeat()">提交选座</button>
+        <p id="seat-output" style="display: none;text-align: center;"></p>
+        <p id="price-output" style="display: none;text-align: center;"></p>
+    </div>
+    
+	<script src="script.js"></script>
+</body>
+</html>
