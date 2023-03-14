@@ -34,4 +34,3 @@ if prediction > 0.5:
 else:
     print("这个新的乘客可能不会选择您的服务")
 
-modle
